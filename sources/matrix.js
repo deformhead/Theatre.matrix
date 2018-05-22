@@ -1,12 +1,12 @@
-export function add(A, B) {
+function add(A, B) {
 
     return map(A, (value, row, column) => {
 
         return A[row][column] + B[row][column];
     });
-};
+}
 
-export function create(rows, columns) {
+function create(rows, columns) {
 
     const matrix = [];
 
@@ -21,9 +21,9 @@ export function create(rows, columns) {
     }
 
     return matrix;
-};
+}
 
-export function map(A, handler) {
+function map(A, handler) {
 
     const matrix = [];
 
@@ -38,9 +38,9 @@ export function map(A, handler) {
     }
 
     return matrix;
-};
+}
 
-export function multiply(A, B) {
+function multiply(A, B) {
 
     const matrix = [];
 
@@ -60,22 +60,22 @@ export function multiply(A, B) {
     }
 
     return matrix;
-};
+}
 
-export function scale(A, factor) {
+function scale(A, factor) {
 
     return map(A, (value) => {
 
         return value * factor;
     });
-};
+}
 
-export function subtract(A, B) {
+function subtract(A, B) {
 
     return add(A, scale(B, -1));
-};
+}
 
-export function transpose(A) {
+function transpose(A) {
 
     const matrix = [];
 
@@ -90,4 +90,15 @@ export function transpose(A) {
     }
 
     return matrix;
+}
+
+export {
+
+    add,
+    create,
+    map,
+    multiply,
+    scale,
+    subtract,
+    transpose
 };
