@@ -6,6 +6,23 @@ export function add(A, B) {
     });
 };
 
+export function create(rows, columns) {
+
+    const matrix = [];
+
+    for (let row = 0; row < rows; row += 1) {
+
+        matrix[row] = [];
+
+        for (let column = 0; column < columns; column += 1) {
+
+            matrix[row][column] = 0;
+        }
+    }
+
+    return matrix;
+};
+
 export function map(A, handler) {
 
     const matrix = [];
