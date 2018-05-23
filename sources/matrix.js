@@ -92,13 +92,5 @@ function transpose(A) {
     return matrix;
 }
 
-export {
-
-    add,
-    create,
-    map,
-    multiply,
-    scale,
-    subtract,
-    transpose
-};
+// exports current module as functions
+export {add, create, map, multiply, scale, subtract, transpose};
