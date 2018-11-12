@@ -87,6 +87,23 @@ function scale(A, factor) {
     });
 }
 
+function squash(A) {
+
+    const matrix = [[]];
+
+    for (let column = 0, columns = A[0].length; column < columns; column += 1) {
+
+        matrix[0][column] = 0;
+
+        for (let row = 0, rows = A.length; row < rows; row += 1) {
+
+            matrix[0][column] += A[row][column];
+        }
+    }
+
+    return matrix;
+}
+
 function subtract(A, B) {
 
     return add(A, scale(B, -1));
@@ -110,4 +127,4 @@ function transpose(A) {
 }
 
 // exports current module as functions
-export {add, create, hadamard, map, multiply, scale, subtract, transpose};
+export {add, create, hadamard, map, multiply, scale, squash, subtract, transpose};
