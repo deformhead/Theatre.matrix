@@ -23,6 +23,23 @@ function create(rows, columns) {
     return matrix;
 }
 
+function hadamard(A, B) {
+
+    const matrix = [];
+
+    for (let row = 0, rows = A.length; row < rows; row += 1) {
+
+        matrix[row] = [];
+
+        for (let column = 0, columns = A[0].length; column < columns; column += 1) {
+
+            matrix[row][column] = A[row][column] * B[row][column];
+        }
+    }
+
+    return matrix;
+}
+
 function map(A, handler) {
 
     const matrix = [];
@@ -93,4 +110,4 @@ function transpose(A) {
 }
 
 // exports current module as functions
-export {add, create, map, multiply, scale, subtract, transpose};
+export {add, create, hadamard, map, multiply, scale, subtract, transpose};
