@@ -6,7 +6,7 @@ function add(A, B) {
     });
 }
 
-function create(rows, columns) {
+function create(rows, columns, initialize = () => 1) {
 
     const matrix = [];
 
@@ -16,7 +16,7 @@ function create(rows, columns) {
 
         for (let column = 0; column < columns; column += 1) {
 
-            matrix[row][column] = 0;
+            matrix[row][column] = initialize(row, column);
         }
     }
 
